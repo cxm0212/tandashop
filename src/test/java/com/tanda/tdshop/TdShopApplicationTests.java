@@ -1,7 +1,7 @@
 package com.tanda.tdshop;
 
+import com.tanda.tdshop.entities.tdshop.UserEntity;
 import com.tanda.tdshop.manager.modules.login.LoginService;
-import com.tanda.tdshop.entity.UserEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,7 +2,7 @@ package com.tanda.tdshop.manager.modules.login;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.tanda.tdshop.entity.UserEntity;
+import com.tanda.tdshop.entities.tdshop.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;

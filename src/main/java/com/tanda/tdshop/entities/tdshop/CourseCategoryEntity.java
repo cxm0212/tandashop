@@ -11,5 +11,6 @@ import com.baomidou.mybatisplus.annotations.TableName;
 @TableName("t_course_category" )
 public class CourseCategoryEntity extends BaseEntity{
 	private String title;
+	private Integer state;
 
 }

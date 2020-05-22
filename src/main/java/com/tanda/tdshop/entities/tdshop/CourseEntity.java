@@ -13,21 +13,21 @@ import com.baomidou.mybatisplus.annotations.TableName;
 public class CourseEntity extends BaseEntity{
 	private String title;
 	private String description;
-	private int categoryId;
-	private double price;
-	private double vipPrice;
-	private boolean state;
-	private boolean isHot;
-	private boolean isSeckill;
-	private int browse;
-	private boolean isGroup;
-	private double groupPrice;
-	private int groupUsernum;
+	private Integer categoryId;
+	private Float price;
+	private Float vipPrice;
+	private Byte state;
+	private Byte isHot;
+	private Byte isSeckill;
+	private Integer browse;
+	private Byte isGroup;
+	private Float groupPrice;
+	private Integer groupUsernum;
 	private Timestamp groupStartTime;
 	private Timestamp groupEndTime;
-	private int mixAgeUse;
-	private int maxAgeUse;
-	private int createUserId;
+	private Integer mixAgeUse;
+	private Integer maxAgeUse;
+	private Integer createUserId;
 	private String courseMiniImg;
 
 }

@@ -10,8 +10,13 @@ import com.baomidou.mybatisplus.annotations.TableName;
 @Data
 @TableName("t_course_img" )
 public class CourseImgEntity extends BaseEntity{
-	private String img;
-	private boolean type;
+    private Long courseId;
+	private String relativePath;
+	private String absolutePath;
+	private String oldName;
+	private String newName;
+	private int type;
 	private int displayOrder;
+	private Long fileSize;
 
 }

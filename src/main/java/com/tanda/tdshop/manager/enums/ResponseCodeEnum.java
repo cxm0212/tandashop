@@ -6,5 +6,26 @@ package com.tanda.tdshop.manager.enums;
  */
 public enum  ResponseCodeEnum {
 
+    NO(0, "否"),
+
+    YES(1, "是"),
+    ;
+
+
+    public Integer getValue() {
+        return value;
+    }
+    public String getDesc() {
+        return desc;
+    }
+
+    private Integer value;
+    private String desc;
+
+    ResponseCodeEnum(Integer value, String desc) {
+        this.value = value;
+        this.desc = desc;
+    }
+
 
 }

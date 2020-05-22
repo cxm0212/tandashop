@@ -11,7 +11,7 @@ CREATE TABLE `t_course`(
   category_id INT(11) COMMENT '分类id',
   price DECIMAL(8,2) COMMENT '原价',
   vip_price DECIMAL(8,2) COMMENT '会员价格',
-  state TINYINT(1) COMMENT '是否上架 0为未上架 ,1为上架',
+  state TINYINT(1) COMMENT '是否上架 0为未上架 ,1为上架,-1删除',
   is_hot TINYINT(1) COMMENT '是否上推荐热门 0为否,1为是',
   is_seckill TINYINT(1) COMMENT '是否开启秒杀',
   browse INT(11) COMMENT '浏览量',
@@ -32,25 +32,31 @@ DROP TABLE IF EXISTS `t_course_category`;
 CREATE TABLE `t_course_category`(
   id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(20) NOT NULL COMMENT '课程名称',
+  state VARCHAR(20) NOT NULL COMMENT '状态 -1删除 1未删除',
   update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
 )CHARACTER SET =utf8 COMMENT '课程分类表';
 
-DROP TABLE IF EXISTS `t_course_video`;
-CREATE TABLE `t_course_video`(
-  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  course_id INT(11) NOT NULL COMMENT '课程id',
-  tryvideo_url VARCHAR(300) COMMENT '试看视频',
-  full_video_url VARCHAR(300) COMMENT '完整视频',
-  update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
-)CHARACTER SET =utf8 COMMENT '课程视频表';
+-- DROP TABLE IF EXISTS `t_course_video`;
+-- CREATE TABLE `t_course_video`(
+--   id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+--   course_id INT(11) NOT NULL COMMENT '课程id',
+--   tryvideo_url VARCHAR(300) COMMENT '试看视频',
+--   full_video_url VARCHAR(300) COMMENT '完整视频',
+--   update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+--   create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'
+-- )CHARACTER SET =utf8 COMMENT '课程视频表';
 
 DROP TABLE IF EXISTS `t_course_img`;
 CREATE TABLE `t_course_img`(
   id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  img VARCHAR(300) COMMENT '图片路径',
-  type TINYINT(1) COMMENT '1:头部图片,2:课程详情,3:课程大纲,4:课程须知',
+  course_id int(11) COMMENT '课程id',
+  file_size int(11) COMMENT '文件大小',
+  old_name VARCHAR(300) COMMENT '上传前文件名',
+  new_name VARCHAR(300) COMMENT '上传后文件唯一名',
+  relative_path VARCHAR(300) COMMENT '图片相对项目路径',
+  absolute_path VARCHAR(300) COMMENT '图片绝对路径',
+  type TINYINT(1) COMMENT '1:头部图片,2:课程详情,3:课程大纲,4:课程须知,5:试看视频,6:完整视频',
   display_order INT(11) COMMENT '显示顺序',
   update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'

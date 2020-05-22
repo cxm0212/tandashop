@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.tanda.tdshop.manager.modules.course.CourseCategoryDao">
+<mapper namespace="com.tanda.tdshop.manager.modules.category.CourseCategoryDao">
 
     <resultMap id="categoryEntity" type="com.tanda.tdshop.entities.tdshop.CourseCategoryEntity"></resultMap>
 
     <select id="selectAll" resultMap="categoryEntity">
-        select * from t_course_category where 1=1 
+        select * from t_course_category where state=1
         <if test="categoryId != '' and categoryId!=null">
             and id=#{categoryId}
         </if>

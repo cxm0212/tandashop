@@ -1,7 +1,7 @@
 package com.tanda.tdshop.manager.modules.login;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.tanda.tdshop.entity.UserEntity;
+import com.tanda.tdshop.entities.tdshop.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

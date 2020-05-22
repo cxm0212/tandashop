@@ -270,22 +270,23 @@ public class EntityGenerator {
          */
         private String sqlType2JavaType(String sqlType) {
 
-            if (sqlType.equalsIgnoreCase("bit")) {
-                return "boolean";
-            } else if (sqlType.equalsIgnoreCase("tinyint") || sqlType.equalsIgnoreCase("tinyINT UNSIGNED")) {
-                return "byte";
+//            if (sqlType.equalsIgnoreCase("bit")) {
+//                return "Boolean";
+//            } else
+                if (sqlType.equalsIgnoreCase("tinyint") || sqlType.equalsIgnoreCase("tinyINT UNSIGNED")) {
+                return "Byte";
             } else if (sqlType.equalsIgnoreCase("smallint")) {
                 return "short";
             } else if (sqlType.equalsIgnoreCase("int") || sqlType.equalsIgnoreCase("INT UNSIGNED")) {
-                return "int";
+                return "Integer";
             } else if (sqlType.equalsIgnoreCase("bigint")||sqlType.equalsIgnoreCase("Long")) {
-                return "long";
+                return "Long";
             } else if (sqlType.equalsIgnoreCase("float")) {
-                return "float";
+                return "Float";
             } else if (sqlType.equalsIgnoreCase("decimal") || sqlType.equalsIgnoreCase("numeric")
                     || sqlType.equalsIgnoreCase("real") || sqlType.equalsIgnoreCase("money")
                     || sqlType.equalsIgnoreCase("smallmoney")||sqlType.equalsIgnoreCase("DOUBLE") ) {
-                return "double";
+                return "Duble";
             } else if (sqlType.equalsIgnoreCase("varchar") || sqlType.equalsIgnoreCase("char")
                     || sqlType.equalsIgnoreCase("nvarchar") || sqlType.equalsIgnoreCase("nchar")
                     || sqlType.equalsIgnoreCase("text")) {

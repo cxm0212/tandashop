@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tanda.tdshop.manager.modules.course.CourseDao">
+
+    <resultMap id="course" type="com.tanda.tdshop.entities.tdshop.CourseEntity"></resultMap>
+
+    <select id="selectAll" resultMap="course">
+        select * from t_course where 1=1
+        <if test="courseId!='' and courseId>0">
+            and id = #{courseId}
+        </if>
+    </select>
+</mapper>
